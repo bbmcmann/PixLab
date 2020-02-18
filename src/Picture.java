@@ -210,6 +210,29 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	public void negate(){
+		Pixel[][] pixels = this.getPixels2D();
+		for(Pixel[] rowArray : pixels){
+			for(Pixel pixelObj : rowArray){
+				pixelObj.setBlue(255-pixelObj.getBlue());
+				pixelObj.setRed(255-pixelObj.getRed());
+				pixelObj.setGreen(255-pixelObj.getGreen());
+			}
+		}
+	}
+
+	public void greyscale(){
+		Pixel[][] pixels = this.getPixels2D();
+		for(Pixel[] rowArray : pixels){
+			for(Pixel pixelObj : rowArray){
+				int average = (pixelObj.getBlue() + pixelObj.getGreen() + pixelObj.getRed())/3;
+				pixelObj.setBlue(average);
+				pixelObj.setRed(average);
+				pixelObj.setGreen(average);
+			}
+		}
+	}
+
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */

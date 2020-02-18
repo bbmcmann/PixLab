@@ -51,6 +51,12 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testKeepOnlyBlue(){
+    Picture swan = new Picture("swan.jpg");
+    swan.keepOnlyBlue();
+    swan.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -58,8 +64,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    //testKeepOnlyBlue();
+    //testZeroBlue();
+    testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();

@@ -75,6 +75,24 @@ public class PictureTester
     fish.explore();
   }
 
+  public static void testMirrorVerticalRightToLeft(){
+    Picture fish = new Picture("kitten2.jpg");
+    fish.mirrorVerticalRightToLeft();
+    fish.explore();
+  }
+
+  public static void testMirrorHorizontal(){
+    Picture fish = new Picture("barbaraS.jpg");
+    fish.mirrorHorizontal();
+    fish.explore();
+  }
+
+  public static void testMirrorHorizontalBotTop(){
+    Picture fish = new Picture("barbaraS.jpg");
+    fish.mirrorHorizontalBotTop();
+    fish.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -88,9 +106,11 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    testFixUnderwater();
-    //testMirrorVertical();
-    //testMirrorTemple();
+    //testFixUnderwater();
+    //testMirrorVerticalRightToLeft();
+    testMirrorHorizontalBotTop();
+    testMirrorHorizontal();
+    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();

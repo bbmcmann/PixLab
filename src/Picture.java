@@ -288,6 +288,22 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	public void mirrorDiagonal() {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+
+		for (int row = 0; row < pixels.length; row++) {
+			if(row < pixels[0].length){
+				for (int col = 0; col <= row; col++) {
+					leftPixel = pixels[row][col];
+					rightPixel = pixels[col][row];
+					leftPixel.setColor(rightPixel.getColor());
+				}
+			}
+		}
+	}
+
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */

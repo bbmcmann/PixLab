@@ -327,6 +327,25 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+	//row 233 to 315
+	//col 237 to 345
+	public void mirrorGull(){
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel firstPixel = null;
+		Pixel copyPixel1 = null;
+		int diff = 0;
+		
+		for (int row = 233; row <= 315; row++) {
+			for (int col = 237; col <= 345; col++) {
+				diff = 206 - col;
+				firstPixel = pixels[row][col];
+				
+				copyPixel1 = pixels[row+80][206 + diff];
+				copyPixel1.setColor(firstPixel.getColor());
+				
+			}
+		}
+	}
 
 	/*
 	 * Main method for testing - each class in Java can have a main method

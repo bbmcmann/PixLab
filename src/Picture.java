@@ -192,6 +192,23 @@ public class Picture extends SimplePicture {
 		this.write("collage.jpg");
 	}
 
+	public void createMyCollage() {
+		Picture flower1 = new Picture("blue-mark.jpg");
+		Picture flower2 = new Picture("beach.jpg");
+		Picture flower3 = new Picture("barbaraS.jpg");
+		this.copy(flower1, 0, 0);
+		this.copy(flower2, 100, 0);
+		this.copy(flower3, 200, 50);
+		this.copy(flower1, 200, 0);
+		Picture flowerNoBlue = new Picture(flower2);
+		flowerNoBlue.zeroBlue();
+		this.copy(flowerNoBlue, 300, 0);
+		this.copy(flower1, 400, 0);
+		this.copy(flower2, 500, 0);
+		this.mirrorVertical();
+		this.write("collage.jpg");
+	}
+
 	/**
 	 * Method to show large changes in color
 	 * 

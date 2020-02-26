@@ -119,6 +119,12 @@ public class PictureTester
     //pic2.write("testPic.jpg");
   }
 
+  public static void testCreateMyCollage(){
+    Picture pic = new Picture("whiteFlower.jpg");
+    pic.createMyCollage();
+    pic.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -141,8 +147,8 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
-    testCopy();
+    testCreateMyCollage();
+    //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();

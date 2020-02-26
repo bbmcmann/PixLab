@@ -125,6 +125,12 @@ public class PictureTester
     pic.explore();
   }
 
+  public static void testEdge(){
+    Picture pic = new Picture("swan.jpg");
+    pic.edgeDetection(10);
+    pic.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -147,8 +153,9 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCreateMyCollage();
+    //testCreateMyCollage();
     //testCopy();
+    testEdge();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();

@@ -312,13 +312,18 @@ public class Picture extends SimplePicture {
 	public void mirrorArms(){
 		Pixel[][] pixels = this.getPixels2D();
 		Pixel firstPixel = null;
-		Pixel copyPixel = null;
-
+		Pixel copyPixel1 = null;
+		Pixel copyPixel2 = null;
+		int diff = 0;
+		
 		for (int row = 158; row <= 191; row++) {
 			for (int col = 104; col <= 169; col++) {
+				diff = 206 - col;
 				firstPixel = pixels[row][col];
-				copyPixel = pixels[row][col+206];
-				copyPixel.setColor(firstPixel.getColor());
+				copyPixel1 = pixels[row+80][206 + diff];
+				copyPixel2 = pixels[row+80][col];
+				copyPixel1.setColor(firstPixel.getColor());
+				copyPixel2.setColor(firstPixel.getColor());
 			}
 		}
 	}

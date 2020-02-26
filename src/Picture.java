@@ -239,6 +239,36 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	public void edgeDetectionNew(int edgeDist) {
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		Pixel bottomPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+		Color rightColor = null;
+		Color bottomColor = null;
+		double leftAvg = 0;
+		double rightAvg = 0;
+		double bottomAvg = 0;
+		for (int row = 0; row < pixels.length-1; row++) {
+			for (int col = 0; col < pixels[0].length - 2; col++) {
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][col + 1];
+				bottomPixel = pixels[row+1][col];
+				rightColor = rightPixel.getColor();
+				bottomColor = bottomPixel.getColor();
+				leftAvg = leftPixel.getAverage();
+				rightAvg = rightPixel.getAverage();
+				bottomAvg = bottomPixel.getAverage();
+				if (Math.abs(leftAvg - rightAvg) > edgeDist)
+					leftPixel.setColor(Color.BLACK);
+				else if(Math.abs(leftAvg - bottomAvg) > edgeDist)
+					leftPixel.setColor(Color.BLACK);
+				else
+					leftPixel.setColor(Color.WHITE);
+			}
+		}
+	}
+
 	public void keepOnlyBlue(){
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
